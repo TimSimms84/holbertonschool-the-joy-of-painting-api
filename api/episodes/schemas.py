@@ -7,7 +7,7 @@ from typing import Optional, List
 
 
 class EpisodeSchema(BaseModel):
-    """ Fields that must/can be included in a POST request """
+    """ POST request fields -- all Optional """
     title: Optional[str] = Field(None, max_length=50)
     date: Optional[str] = Field(None, max_length=20)
     color_list: Optional[str] = Field(None, max_length=200)

@@ -4,12 +4,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-# Sqlite database does not connect with sensitive info so find here
-# But recommended to use .env file or similar
+# create new database
 SQLALCHEMY_DATEBASE_URI = 'sqlite:///happy_lil_trees.db'
 
 # Create engine
-# Create engine bound to SQLite database
 engine = create_engine(SQLALCHEMY_DATEBASE_URI)
 # Create new sessionmaker
 # Sessionmaker is a factory for creating new sessions

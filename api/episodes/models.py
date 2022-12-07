@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String
 
 
 class Episode(Base):
-    """ Episode table inherits from declarative base to define columns """
+    """ episodes table inherits from declarative base to define columns """
     __tablename__ = 'episodes'
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     title = Column(String(50), nullable=False, unique=True)

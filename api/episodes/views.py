@@ -18,7 +18,7 @@ def all_episodes(*, color: Optional[int] = Query(0, ge=0, lt=19),
                  month: Optional[int] = Query(0, ge=0, le=12),
                  db: Session = Depends(get_db)):
     """ Define GET request made to /episodes endpoint (including params) """
-    # Get all episodes from database
+    # Get all episodes
     query = "SELECT * FROM episodes"
     color_col = find_value(color_dict, color)
     subject_col = find_value(subject_dict, subject)
@@ -43,7 +43,7 @@ def all_episodes(*, color: Optional[int] = Query(0, ge=0, lt=19),
 
 @router.get("/{ep_id}")
 def one_episode(ep_id: int, db: Session = Depends(get_db)):
-    """ Define GET request made to endpoint including ep_id """
+    """ Define GET request made to endpoint with ep_id """
     query = "SELECT * FROM episodes WHERE id = {}".format(ep_id)
     ep = db.execute(query).fetchone()
     if not ep:
